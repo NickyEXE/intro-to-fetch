@@ -22,7 +22,7 @@ function renderCat(cat){
   catsList.appendChild(div)
 }
 
-renderCats(cats)
+// renderCats(cats)
 
 // function renderCat(cat){
 //   const catsList = document.querySelector(".cats-list")
