@@ -3,7 +3,7 @@
 ## SWBATs
 - [ ] Recognize the problems solved by asynchronous code
 - [ ] Distinguish between asynchronous and synchronous code
-- [ ] Use `fetch` to communicate with APIs 
+- [ ] Use `fetch` to communicate with APIs
 - [ ] Use `then` to defer function calls until promises resolve
 - [ ] Synthesize knowledge of DOM manipulation with asynchronous javascript
 - [ ] **BONUS** Use `catch` to handle errors in promises
@@ -202,3 +202,12 @@ fetch("https://dog.ceo/api/breeds/list/all")
 [mdn-ajax]: https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX
 [mdn-ajax-glossary]: https://developer.mozilla.org/en-US/docs/Glossary/AJAX
 [ajax-soap-bottle-img]: https://lh3.googleusercontent.com/proxy/Vk9lqnU5DizCra628qXRwitYNWl40WLt2K_WeA5oZaMZf3dx8c_RA9wuPKj2_aY5pASPLPN3PKscfIaZ4Kkc8MeN2AfUk5ZAoOGao3RcIRNJXHCE8CpntjuCEx73s41MBoO5hYsk-vuWvQt7NCIf9xTZxGZWFaJ0DKRYM0M2jLAG7Z3XAClxcR9ZisVLuE2zF5qSVoYGASVQEiErLI8=s1600-pd-e365-rw-pc0xffffff
+
+
+Instructions:
+ * Clone down this lab.
+ * `cd` into `03-JS-Fetch`
+ * run `npm install -g json-server`
+ * run `json-server cats.json`
+ * open `http://localhost:3000/cats` in your browser
+ * Fetch to that route and use it to `renderCats`
