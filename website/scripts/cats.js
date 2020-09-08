@@ -2,6 +2,10 @@ console.log("INEFFABLE!")
 
 const body = document.querySelector("body")
 
+fetch("http://localhost:3000/cats")
+  .then(res => res.json())
+  .then(renderCats)
+
 function renderCats(cats){
   const catsList = document.createElement("div")
   body.appendChild(catsList)

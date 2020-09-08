@@ -10,7 +10,12 @@
 
 ## Notes
 - AJAX:
-- JSON:
+ * Asynchronous
+ * JavaScript
+ * And
+ * XML HTTP Request
+ => eXtensible Markup Language HyperText Transfer Protocol Request
+- JSON: JAVASCRIPT OBJECT NOTATION
 - `json-server`:
 
 ## What Does Synchronous/ Asynchronous Mean 🕰
