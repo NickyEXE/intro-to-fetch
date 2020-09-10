@@ -23,6 +23,16 @@ function renderCat(cat){
     <p>${cat.description}</p>
     <p>Played by ${cat.actor}</p>
   `
+  const tip = document.createElement("p")
+  tip.innerText = `${cat.actor} has $0 in tips!`
+  const tipButton = document.createElement("div")
+  tipButton.className = "tip cat-button"
+  tipButton.innerText = `Tip ${cat.actor} $10.`
+  const deleteButton = document.createElement("div")
+  deleteButton.className = "delete cat-button"
+  deleteButton.innerText = `Vanish ${cat.name} to the barge in the Thames!`
+  div.append(tip, tipButton, deleteButton)
+
   catsList.appendChild(div)
 }
 
