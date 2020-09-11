@@ -1,5 +1,5 @@
 console.log("INEFFABLE!")
-const API = "http://localhost:3000"
+const API = "https://bestcatfansite.herokuapp.com"
 
 const body = document.querySelector("body")
 
@@ -36,11 +36,11 @@ function renderCat(cat){
   deleteButton.innerText = `Vanish ${cat.name} to the barge in the Thames!`
   deleteButton.addEventListener("click", () => {
     div.remove()
-    // fetch(`${API}/cats/${cat.id}`, {
-    //   method: "DELETE"
-    // })
-    // .then(res=> res.json())
-    // .then(() => div.remove())
+    fetch(`${API}/cats/${cat.id}`, {
+      method: "DELETE"
+    })
+    .then(res=> res.json())
+    .then(() => div.remove())
   })
   div.append(tip, tipButton, deleteButton)
 
