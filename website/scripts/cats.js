@@ -1,8 +1,9 @@
 console.log("INEFFABLE!")
+const API = "http://localhost:3000"
 
 const body = document.querySelector("body")
 
-fetch("http://localhost:3000/cats")
+fetch(`${API}/cats`)
   .then(res => res.json())
   .then(renderCats)
 
@@ -25,12 +26,22 @@ function renderCat(cat){
   `
   const tip = document.createElement("p")
   tip.innerText = `${cat.actor} has $0 in tips!`
+
   const tipButton = document.createElement("div")
   tipButton.className = "tip cat-button"
   tipButton.innerText = `Tip ${cat.actor} $10.`
+
   const deleteButton = document.createElement("div")
   deleteButton.className = "delete cat-button"
   deleteButton.innerText = `Vanish ${cat.name} to the barge in the Thames!`
+  deleteButton.addEventListener("click", () => {
+    div.remove()
+    // fetch(`${API}/cats/${cat.id}`, {
+    //   method: "DELETE"
+    // })
+    // .then(res=> res.json())
+    // .then(() => div.remove())
+  })
   div.append(tip, tipButton, deleteButton)
 
   catsList.appendChild(div)
