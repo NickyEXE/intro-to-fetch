@@ -1,5 +1,6 @@
 console.log("INEFFABLE!")
-const API = "https://bestcatfansite.herokuapp.com"
+const API = "http://localhost:3000"
+const newCatForm = document.getElementById("new-cat-form")
 
 const body = document.querySelector("body")
 
@@ -25,17 +26,25 @@ function renderCat(cat){
     <p>Played by ${cat.actor}</p>
   `
   const tip = document.createElement("p")
-  tip.innerText = `${cat.actor} has $0 in tips!`
+  tip.innerText = `${cat.actor} has $${cat.tips} in tips!`
 
   const tipButton = document.createElement("div")
   tipButton.className = "tip cat-button"
   tipButton.innerText = `Tip ${cat.actor} $10.`
+  tipButton.addEventListener("click", () => {
+    fetch(`${API}/cats/${cat.id}`, {
+      method: 'PATCH'
+    })
+    .then(res => res.json())
+    .then((cat) => {
+      tip.innerText = `${cat.actor} has $${cat.tips} in tips!`
+    })
+  })
 
   const deleteButton = document.createElement("div")
   deleteButton.className = "delete cat-button"
   deleteButton.innerText = `Vanish ${cat.name} to the barge in the Thames!`
   deleteButton.addEventListener("click", () => {
-    div.remove()
     fetch(`${API}/cats/${cat.id}`, {
       method: "DELETE"
     })
@@ -46,6 +55,38 @@ function renderCat(cat){
 
   catsList.appendChild(div)
 }
+
+newCatForm.addEventListener("submit", (e) => {
+  e.preventDefault()
+  data = {
+    name: newCatForm.name.value,
+    description: newCatForm.description.value,
+    actor: newCatForm.actor.value,
+    image: newCatForm.image.value,
+    team_name: newCatForm.teamName.value,
+  }
+  fetch(`${API}/cats`, {
+    method: 'POST', // or 'PUT'
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.errors) { alert(data.errors) }
+    else {
+      renderCat(data)
+      newCatForm.reset()
+    }
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+})
+
+
+
 
 // renderCats(cats)
 
