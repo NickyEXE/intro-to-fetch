@@ -216,3 +216,43 @@ Instructions:
  * run `json-server cats.json`
  * open `http://localhost:3000/cats` in your browser
  * Fetch to that route and use it to `renderCats`
+
+
+```html
+<div class="cats-list"><div class="cat-card">
+    <img src="https://www.gannett-cdn.com/presto/2019/12/18/USAT/bfd9983f-dcd6-46a0-93c1-aabad1226e58-XXX_078_swift.JPG" alt="Bombalurina/">
+    <p><strong>Bombalurina</strong></p>
+    <p>Femme Fatale, Introduces Macavity at the Jellicle Ball.</p>
+    <p>Played by Taylor Swift</p>
+  <p>Taylor Swift has $260 in tips!</p><div class="tip cat-button">Tip Taylor Swift $10.</div><div class="delete cat-button">Vanish Bombalurina to the barge in the Thames!</div></div><div class="cat-card">
+    <img src="https://vignette.wikia.nocookie.net/catsmusical/images/b/bb/Grizabella_Jennifer_Hudson_Memory_Prelude_1.png" alt="Grizabella/">
+    <p><strong>Grizabella</strong></p>
+    <p>The Glamour Cat, now shunned by the Jellicles and wishing for her former life. Sings Memory.</p>
+    <p>Played by Jennifer Hudson</p>
+  <p>Jennifer Hudson has $290 in tips!</p><div class="tip cat-button">Tip Jennifer Hudson $10.</div><div class="delete cat-button">Vanish Grizabella to the barge in the Thames!</div></div><div class="cat-card">
+    <img src="https://vignette.wikia.nocookie.net/villains/images/f/f2/646646464-2.jpg" alt="Macavity/">
+    <p><strong>Macavity</strong></p>
+    <p>Magical, nefarious, kidnaps Old Deuteronomy at the Jellicle Ball</p>
+    <p>Played by Idris Elba</p>
+  <p>Idris Elba has $130 in tips!</p><div class="tip cat-button">Tip Idris Elba $10.</div><div class="delete cat-button">Vanish Macavity to the barge in the Thames!</div></div><div class="cat-card">
+    <img src="https://vignette.wikia.nocookie.net/catsmusical/images/c/c9/Mistoffelees_laurie_davidson_movie_2019_02.png" alt="Mr." mistoffelees="">
+    <p><strong>Mr. Mistoffelees</strong></p>
+    <p>The Magical Cat!</p>
+    <p>Played by Laurie Davidson</p>
+  <p>Laurie Davidson has $110 in tips!</p><div class="tip cat-button">Tip Laurie Davidson $10.</div><div class="delete cat-button">Vanish Mr. Mistoffelees to the barge in the Thames!</div></div><div class="cat-card">
+    <img src="https://vignette.wikia.nocookie.net/catsmusical/images/f/fb/Munkustrap_Robbie_Fairchild.png" alt="Munkustrap/">
+    <p><strong>Munkustrap</strong></p>
+    <p>The narrator cat, introduces many of the other Jellicles.</p>
+    <p>Played by Robbie Fairchild</p>
+  <p>Robbie Fairchild has $90 in tips!</p><div class="tip cat-button">Tip Robbie Fairchild $10.</div><div class="delete cat-button">Vanish Munkustrap to the barge in the Thames!</div></div><div class="cat-card">
+    <img src="https://vignette.wikia.nocookie.net/catsmusical/images/1/1a/Skimbleshanks_Movie_2019.png/revision/latest?cb=20191221210538" alt="Skimbleshanks/">
+    <p><strong>Skimbleshanks</strong></p>
+    <p>The RAILWAY CAT, THE CAT ON THE RAILWAY TRAIN</p>
+    <p>Played by Steven McRae</p>
+  <p>Steven McRae has $6000130 in tips!</p><div class="tip cat-button">Tip Steven McRae $10.</div><div class="delete cat-button">Vanish Skimbleshanks to the barge in the Thames!</div></div><div class="cat-card">
+    <img src="https://vignette.wikia.nocookie.net/catsmusical/images/0/0e/Rum_tum_tugger_jason_derulo_movie_2019_01.png/" alt="The" rum="" tum="" tugger="">
+    <p><strong>The Rum Tum Tugger</strong></p>
+    <p>The Rum Tum Tugger is a curious cat.</p>
+    <p>Played by Jason Derulo</p>
+  <p>Jason Derulo has $40 in tips!</p><div class="tip cat-button">Tip Jason Derulo $10.</div><div class="delete cat-button">Vanish The Rum Tum Tugger to the barge in the Thames!</div></div></div>
+  ```
