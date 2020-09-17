@@ -19,7 +19,7 @@ const adapter = {
     .then(res=> res.json())
   },
   addCat: function(target){
-    data = {
+    const data = {
       name: target.name.value,
       description: target.description.value,
       actor: target.actor.value,
