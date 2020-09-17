@@ -1,12 +1,16 @@
 console.log("INEFFABLE!")
-const API = "http://localhost:3000"
 const newCatForm = document.getElementById("new-cat-form")
 
 const body = document.querySelector("body")
 
-fetch(`${API}/cats`)
-  .then(res => res.json())
-  .then(renderCats)
+function init(){
+  adapter.getAllCats().then(renderCats)
+  appendEventListeners()
+}
+
+function appendEventListeners(){
+  addSubmitEvent()
+}
 
 function renderCats(cats){
   const catsList = document.createElement("div")
@@ -32,10 +36,7 @@ function renderCat(cat){
   tipButton.className = "tip cat-button"
   tipButton.innerText = `Tip ${cat.actor} $10.`
   tipButton.addEventListener("click", () => {
-    fetch(`${API}/cats/${cat.id}`, {
-      method: 'PATCH'
-    })
-    .then(res => res.json())
+    adapter.tipCat(cat.id)
     .then((cat) => {
       tip.innerText = `${cat.actor} has $${cat.tips} in tips!`
     })
@@ -45,10 +46,7 @@ function renderCat(cat){
   deleteButton.className = "delete cat-button"
   deleteButton.innerText = `Vanish ${cat.name} to the barge in the Thames!`
   deleteButton.addEventListener("click", () => {
-    fetch(`${API}/cats/${cat.id}`, {
-      method: "DELETE"
-    })
-    .then(res=> res.json())
+    adapter.deleteCat(cat.id)
     .then(() => div.remove())
   })
   div.append(tip, tipButton, deleteButton)
@@ -56,34 +54,22 @@ function renderCat(cat){
   catsList.appendChild(div)
 }
 
-newCatForm.addEventListener("submit", (e) => {
-  e.preventDefault()
-  data = {
-    name: newCatForm.name.value,
-    description: newCatForm.description.value,
-    actor: newCatForm.actor.value,
-    image: newCatForm.image.value,
-    team_name: newCatForm.teamName.value,
-  }
-  fetch(`${API}/cats`, {
-    method: 'POST', // or 'PUT'
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
+function addSubmitEvent(){
+  newCatForm.addEventListener("submit", (e) => {
+    e.preventDefault()
+    adapter.addCat(e.target)
+    .then(data => {
+      if (data.errors) { alert(data.errors) }
+      else {
+        renderCat(data)
+        newCatForm.reset()
+      }
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
   })
-  .then(response => response.json())
-  .then(data => {
-    if (data.errors) { alert(data.errors) }
-    else {
-      renderCat(data)
-      newCatForm.reset()
-    }
-  })
-  .catch((error) => {
-    console.error('Error:', error);
-  });
-})
+}
 
 
 
