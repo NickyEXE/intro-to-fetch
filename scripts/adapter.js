@@ -50,5 +50,9 @@ const adapter = {
       body: JSON.stringify(data),
     })
     .then(response => response.json())
+  },
+  getADog: function(){
+    return fetch("https://dog.ceo/api/breeds/image/random")
+    .then(resp => resp.json())
   }
 }
