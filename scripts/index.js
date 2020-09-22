@@ -10,5 +10,8 @@ function router(e){
     case "Cosplay":
       new Cosplay()
       break;
+    case "Cats":
+      new Cats()
+      break;
   }
 }

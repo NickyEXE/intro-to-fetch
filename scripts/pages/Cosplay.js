@@ -9,8 +9,7 @@ class Cosplay {
   }
 
   addDog = () => {
-    fetch("https://dog.ceo/api/breeds/image/random")
-    .then(resp => resp.json())
+    adapter.getADog()
     .then(resp => {
       this.renderDog(resp.message)})
   }
