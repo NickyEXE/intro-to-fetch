@@ -34,5 +34,21 @@ const adapter = {
       body: JSON.stringify(data),
     })
     .then(response => response.json())
+  },
+  editCat: function(target){
+    const data = {
+      name: target.name.value,
+      description: target.description.value,
+      actor: target.actor.value,
+      image: target.image.value,
+    }
+    return fetch(`${API}/cats/${target.catId.value}`, {
+      method: 'PATCH', // or 'PUT'
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+    .then(response => response.json())
   }
 }

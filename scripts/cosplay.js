@@ -6,7 +6,7 @@ const dogsList = document.querySelector(".dogs")
 let dog
 
 function addDog(){
-  fetch("https://www.google.com/")
+  fetch("https://dog.ceo/api/breeds/image/random")
   .then(resp => resp.json())
   .then(resp => {
     console.log(resp)
